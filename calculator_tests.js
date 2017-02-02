@@ -75,3 +75,28 @@ QUnit.test("Digit limiter test", function (assert) {
     assert.equal(document.getElementById("screen").value, "1111111111111111", "Passed-expected 16 digits");
     allClear();
 });
+//Test for store memory function.
+QUnit.test("Store memory test", function (assert) {
+    addDigit('1');
+    memoryStore();
+    assert.deepEqual(sto, "1", "Passed-Expect sto = 2")
+    allClear();
+});
+//Test for add memory function
+QUnit.test("Add memory test", function (assert) {
+    addDigit('1');
+    memoryStore();
+    addDigit('3');
+    memoryAdd();
+    assert.deepEqual(document.getElementById("screen").value, "4", "Passed - Expected 4");
+    allClear();
+});
+//Test for subtract memory function
+QUnit.test("Subtract memory test", function (assert) {
+    addDigit('3');
+    memoryStore();
+    addDigit('1');
+    memorySub();
+    assert.deepEqual(document.getElementById("screen").value, "2", "Passed - Expected 2");
+    allClear();
+});

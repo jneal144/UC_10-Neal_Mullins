@@ -187,7 +187,7 @@ function memoryRecall() {
  */
 function memoryAdd() {
     current_input = eval(sto) + eval(current_input);
-    memoryStore();
+    sto = current_input;
     displayCurrentInput();
 }
 /**
@@ -195,7 +195,7 @@ function memoryAdd() {
  */
 function memorySub() {
     current_input = eval(sto) - eval(current_input);
-    memoryStore();
+    sto = current_input;
     displayCurrentInput();
 }
 /**
