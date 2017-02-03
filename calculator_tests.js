@@ -20,19 +20,39 @@ QUnit.test("Change sign test", function (assert) {
     allClear();
 });
 //US2: As a user I want to be able to press a button and change the inputed number on the calculator's screen to change to a percentage.
+QUnit.test("Change to percentage test", function (assert) {
+    addDigit ('1');
+    percentage();
+    assert.deepEqual(document.getElementById("screen").value, "0.01", "Passed - Expected 0.01")
+    allClear();
+});
 //US3: As a user, I want to be able to calculate the inverse of a number simply by pressing a button.
+QUnit.test("Change to inverse test", function (assert) {
+    addDigit ('2');
+    inverse();
+    assert.deepEqual(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5")
+    allClear();
+});
 //US4: As a user I want to be able to calculate the factorial of a number by simply pressing a button.
+QUnit.test("Change to factorial test", function (assert) {
+    addDigit ('4');
+    factorial();
+    assert.deepEqual(document.getElementById("screen").value, "24", "Passed - Expected 24")
+    allClear();
+});
 //US5: As a user I want to be able to calculate the square root of a number by simply pressing a button.
 QUnit.test("Square root test", function (assert) {
     addDigit('4');
     squareRoot();
     assert.deepEqual(document.getElementById("screen").value, "2", "Passed - Expected 2");
+    allClear();
 });
 //US6: As a user I want to be able to calculate the square of a number by simply pressing a button.
 QUnit.test("Square test", function (assert) {
     addDigit('2');
     square();
     assert.deepEqual(document.getElementById("screen").value, "4", "Passed - Expected 4");
+    allClear();
 });
 //US7: As a user who sometimes makes mistakes when pressing buttons on the keypad, I want to be able to press a button that clears my current input, but not the stored procedure.
 QUnit.test("Delete current input", function (assert) {
@@ -40,6 +60,7 @@ QUnit.test("Delete current input", function (assert) {
     addDigit('2');
     Clear();
     assert.deepEqual(document.getElementById("screen").value, "0", "Passed - Expected 0");
+    allClear();
 });
 //US8: Bug Alert! There is a bug in the calculator app! As a careless user I want to be told that I just tried to divide by zero, which I should be told is not allowed.
 QUnit.test("Zero Error Test", function (assert) {
